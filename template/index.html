@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <title>Get User TimeLine</title>
+  </head>
+  <body>
+    <form id="formGetTimeline" action="/" method="POST">
+      <div style="text-align: center; margin-top: 30px;">
+        <p>
+          <ons-input id="username" name="username" modifier="underbar" placeholder="Username" float></ons-input>
+        </p>
+        <p>
+          <ons-input id="count" name="count" modifier="underbar" type="number" placeholder="count" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <ons-button onclick="getTimeLine()">Send</ons-button>
+        </p>
+      </div>
+    </form>
+
+    {% if tweets != '' %}
+      <ons-page>
+        <ons-toolbar>
+          <div class="center">{{ user_name }} Tweet</div>
+          <div class="right"><ons-button><a href="/">Back</a></ons-button></div>
+        </ons-toolbar>
+        <ons-scroller>
+          <ons-list>
+            {% for tweet in tweets %}
+              <ons-list-item>{{ tweet.text }}</ons-list-item>
+            {% endfor %}
+          </ons-list>
+        </ons-scroller>
+      </ons-page>
+    {% endif %}
+
+    <!-- scr -->
+    <script>
+    // for electron
+    if (typeof module !== 'undefined') {
+      window.__tempModuleExports__ = module.exports;
+      module.exports = false;
+    }
+    </script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+    <script>
+    // for electron
+    if (window.__tempModuleExports__) {
+      module.exports = window.__tempModuleExports__;
+      window.__tempModuleExports__ = null;
+      delete window.__tempModuleExports__;
+    }
+
+    $(function() {
+      console.log($ !== undefined);
+    });
+
+    var getTimeLine = function() {
+      $("#formGetTimeline").submit()
+    };
+  </script>
+
+  </body>
+</html>

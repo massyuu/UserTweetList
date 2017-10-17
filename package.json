@@ -1,0 +1,20 @@
+{
+  "name": "usertweetlist",
+  "version": "1.0.0",
+  "description": "get User Tweet List",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "UserTweetList"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "onsenui": "^2.6.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
