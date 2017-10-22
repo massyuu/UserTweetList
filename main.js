@@ -19,8 +19,8 @@ app.on('ready', function() {
     mainWindow = new BrowserWindow({width: 800, height: 600 , useContentSize: true});
     mainWindow.loadURL(mainAddr);
 
-    // デベロッパーツールの起動
-    mainWindow.webContents.openDevTools();
+    // debug デベロッパーツールの起動
+    //mainWindow.webContents.openDevTools();
 
 
     // 終了処理
